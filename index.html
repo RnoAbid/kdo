@@ -2,15 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/flowers.png" type="image/x-icon">
     <title>HAPPY BIRTHDAY</title>
 </head>
 <body>
+    <script>
+        // Tanggal yang diizinkan
+        const allowedDate = new Date('2025-01-11'); // 11 Januari 2025
+        const now = new Date();
+        const currentDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+        // Jika tanggal saat ini bukan 11 Januari 2025, alihkan ke halaman restricted.html
+        if (currentDate.getTime() !== allowedDate.getTime()) {
+            window.location.href = 'restricted.html';
+        }
+    </script>
+
+    <!-- Konten yang hanya bisa diakses pada tanggal 11 Januari 2025 -->
     <div class="greetings">
-    <!-- silahkan menambah kata sesuai keinginan dengan <span>text...</span -->
         <span>S</span>
         <span>H</span>
         <span>A</span>
@@ -36,7 +47,6 @@
         <button>
             <a href="teksme.html">DISINI ADA SESUATU BUAT KAMU🥰🥰🥰</a>
         </button>
-        
     </div>
 </body>
 </html>
