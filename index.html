@@ -6,21 +6,24 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/flowers.png" type="image/x-icon">
     <title>HAPPY BIRTHDAY</title>
-</head>
-<body>
     <script>
-        // Tanggal yang diizinkan
-        const allowedDate = new Date('2025-01-11'); // 11 Januari 2025
-        const now = new Date();
-        const currentDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        // Fungsi pembatasan akses berdasarkan tanggal
+        const allowedDate = new Date('2025-01-11'); // Tanggal diizinkan (11 Januari 2025)
+        const now = new Date(); // Tanggal sekarang
+        const currentDate = new Date(now.getFullYear(), now.getMonth(), now.getDate()); // Format YYYY-MM-DD
 
-        // Jika tanggal saat ini bukan 11 Januari 2025, alihkan ke halaman restricted.html
+        // Log untuk debugging
+        console.log("Tanggal diizinkan:", allowedDate);
+        console.log("Tanggal saat ini:", currentDate);
+
+        // Jika tanggal tidak sama, arahkan ke halaman restricted.html
         if (currentDate.getTime() !== allowedDate.getTime()) {
-            window.location.href = 'restricted.html';
+            window.location.href = 'restricted.html'; // Redirect ke halaman pembatasan
         }
     </script>
-
-    <!-- Konten yang hanya bisa diakses pada tanggal 11 Januari 2025 -->
+</head>
+<body>
+    <!-- Konten halaman utama -->
     <div class="greetings">
         <span>S</span>
         <span>H</span>
