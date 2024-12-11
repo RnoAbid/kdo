@@ -6,24 +6,26 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/flowers.png" type="image/x-icon">
     <title>HAPPY BIRTHDAY</title>
-    <script>
-        // Fungsi pembatasan akses berdasarkan tanggal
-        const allowedDate = new Date('2025-01-11'); // Tanggal diizinkan (11 Januari 2025)
-const now = new Date('2025-01-11'); // Simulasi tanggal 11 Januari 2025
-        const currentDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  <script>
+    // Fungsi pembatasan akses berdasarkan tanggal
+    const allowedDate = new Date('2025-01-11'); // Tanggal diizinkan (11 Januari 2025)
+    const now = new Date(); // Tanggal sekarang
+    const currentDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const allowedDateOnly = new Date(allowedDate.getFullYear(), allowedDate.getMonth(), allowedDate.getDate());
 
-        // Debugging: Log tanggal diizinkan dan tanggal saat ini
-        console.log("Tanggal diizinkan:", allowedDate);
-        console.log("Tanggal saat ini:", currentDate);
+    // Debugging: Log tanggal diizinkan dan tanggal saat ini
+    console.log("Tanggal diizinkan:", allowedDateOnly);
+    console.log("Tanggal saat ini:", currentDate);
 
-        // Jika tanggal tidak sesuai, alihkan ke restricted.html
-        if (currentDate.getTime() !== allowedDate.getTime()) {
-            console.log("Tanggal tidak sesuai, mengalihkan ke restricted.html");
-            window.location.href = 'restricted.html';
-        } else {
-            console.log("Tanggal sesuai, akses diizinkan.");
-        }
-    </script>
+    // Jika tanggal tidak sesuai, alihkan ke restricted.html
+    if (currentDate.getTime() !== allowedDateOnly.getTime()) {
+        console.log("Tanggal tidak sesuai, mengalihkan ke restricted.html");
+        window.location.href = 'restricted.html';
+    } else {
+        console.log("Tanggal sesuai, akses diizinkan.");
+    }
+</script>
+
 </head>
 <body>
     <div class="greetings">
