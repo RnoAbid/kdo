@@ -10,20 +10,22 @@
         // Fungsi pembatasan akses berdasarkan tanggal
         const allowedDate = new Date('2025-01-11'); // Tanggal diizinkan (11 Januari 2025)
         const now = new Date(); // Tanggal sekarang
-        const currentDate = new Date(now.getFullYear(), now.getMonth(), now.getDate()); // Format YYYY-MM-DD
+        const currentDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
-        // Log untuk debugging
+        // Debugging: Log tanggal diizinkan dan tanggal saat ini
         console.log("Tanggal diizinkan:", allowedDate);
         console.log("Tanggal saat ini:", currentDate);
 
-        // Jika tanggal tidak sama, arahkan ke halaman restricted.html
+        // Jika tanggal tidak sesuai, alihkan ke restricted.html
         if (currentDate.getTime() !== allowedDate.getTime()) {
-            window.location.href = 'restricted.html'; // Redirect ke halaman pembatasan
+            console.log("Tanggal tidak sesuai, mengalihkan ke restricted.html");
+            window.location.href = 'restricted.html';
+        } else {
+            console.log("Tanggal sesuai, akses diizinkan.");
         }
     </script>
 </head>
 <body>
-    <!-- Konten halaman utama -->
     <div class="greetings">
         <span>S</span>
         <span>H</span>
